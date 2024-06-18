@@ -7,7 +7,10 @@ type Query = {
   offset: number;
 };
 
-type QueryNew =
+type QueryNew = {
+  limit: number;
+  offset: number;
+} & (
   | {
       table: "users";
       userId: string;
@@ -23,11 +26,12 @@ type QueryNew =
   | {
       table: "sales";
       saleId: string;
-    };
+    }
+);
 
 // const options: Query = { table: "users", userId: "123" };
 
-function query(options: QueryNew): string {
+function queryone(options: QueryNew): string {
   switch (options.table) {
     case "users":
       return options.userId;
@@ -40,13 +44,28 @@ function query(options: QueryNew): string {
 
 // Exhaustive Switch
 
-function query(options: QueryNew): string {
+function querytwo(options: QueryNew): string {
+  let id = "";
+
   switch (options.table) {
     case "users":
-      return options.userId;
+      id = options.userId;
+      break;
     case "widgets":
-      return options.widgetId;
+      id = options.widgetId;
+      break;
     case "sessions":
-      return options.sessionId;
+      id = options.sessionId;
+      break;
+    case "sales":
+      id = options.saleId;
+      break;
+    default:
+      assertCannotReact(options); // Checks to see if a QueryNew value is missing
   }
+  return id;
+}
+
+function assertCannotReact(x: never) {
+  throw new Error("cannot reach this place in the code");
 }
