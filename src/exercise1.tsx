@@ -55,6 +55,35 @@ function logAll(...values: string[]) {
   console.log(...values);
 }
 
+logAll("a", "b", "c");
+
+function logAll2(...values: (string | number)[]) {
+  console.log(...values);
+}
+logAll2(1, 2, 3, "y", 5, "z");
+
+type bulltime = boolean | string;
+
+//type useArrowNotColon = (s1: string, s2: string): number;
+type useArrowNotColon2 = (s1: string, s2: string) => number;
+
+const fn: bulltime = (s1, s2) => {
+  return s1.length + s2.length;
+};
+
+const fn2: useArrowNotColon2 = (s3, s4) => {
+  console.log(s3, s4);
+};
+
+type BoolOrString = boolean | string;
+
+let boolOrString: BoolOrString = true;
+boolOrString = "Hello";
+// union - we'll just pretend it means or ... more on this later
+
+// types can hold literal valies
+type Yes = "YES";
+
 
 // Javascript Test
 // const func1 = function () {};
