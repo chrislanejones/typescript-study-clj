@@ -75,6 +75,18 @@ const fn2: useArrowNotColon2 = (s3, s4) => {
   console.log(s3, s4);
 };
 
+// types can hold literal valies
+type Yes = "YES";
+
+type BoolForSomeReason = boolean;
+type TwoStringsReturnNumber = (s1: string, s2: string) => number;
+type LogTwoStrings = (s1: string, s2: string) => void;
+
+// Added Type to Number
+const fn: TwoStringsReturnNumber = (s1, s2) => {
+  return "s1.length + s2.length";
+};
+
 type BoolOrString = boolean | string;
 
 let boolOrString: BoolOrString = true;
@@ -83,6 +95,44 @@ boolOrString = "Hello";
 
 // types can hold literal valies
 type Yes = "YES";
+let yes: Yes = "YES";
+
+
+// this is the type with "YES" only. It's NOT a string. 
+// We'll see this when we discuss discriminated unions in a bit
+type YesOrNo = "YES" | "NO";
+let yesOrNo: YesOrNo = "NO";
+yesOrNo = "YES";
+
+
+// object types
+
+type SomeObject = {
+  name: string;
+  age: number;
+  active: boolean;
+};
+
+let obj: SomeObject = {
+  name: "Kevin",
+  age: 20,
+  active: true,
+};
+
+// Default Values in Javascript, maybe Redux
+let defaultState = {
+  title: "",
+  active: true,
+  count: 0,
+};
+// Quicker Way
+type DefaultState = typeof defaultState;
+
+
+type KeyOfDefaultState = keyof DefaultState;
+let x: KeyOfDefaultState;
+
+type TypeOfDefaultStateProperty<T extends keyof DefaultState> = DefaultState[T];
 
 
 // Javascript Test
