@@ -129,10 +129,20 @@ let defaultState = {
 type DefaultState = typeof defaultState;
 
 
+// Only holds the keysof DefaultState
 type KeyOfDefaultState = keyof DefaultState;
 let x: KeyOfDefaultState;
 
 type TypeOfDefaultStateProperty<T extends keyof DefaultState> = DefaultState[T];
+
+
+// If you don't have a verible
+type DefaultStateTitle = DefaultState["title"];
+
+// Tuples - Tuples are an array of values
+type StringNumberTuple = [string, number];
+
+let tuple: StringNumberTuple = ["", 2];
 
 
 // Javascript Test
