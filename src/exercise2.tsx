@@ -38,3 +38,27 @@ class Foo<T1, T2> {
 let fooInst1 = new Foo<number, string>(12, "Hello");
 
 let fooInst2 = new Foo(12, "Hello");
+
+// Spotify Music Like Data
+export interface CatalogItem {
+  id: string;
+  url: string;
+  metadata: Record<string, string>;
+}
+
+//Artist
+export interface Artist extends CatalogItem {
+  name: string;
+}
+
+//Album
+export interface Album extends CatalogItem {
+  name: string;
+  trackCount: number;
+}
+
+//Song
+export interface Song extends CatalogItem {
+  name: string;
+  duration: number;
+}
