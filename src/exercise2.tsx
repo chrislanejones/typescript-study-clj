@@ -74,6 +74,14 @@ let someObject = {
 };
 
 // Type Erasure
-function getSimilarItems(item: CatalogItem): CatalogItem[] {
+// function getSimilarItems(item: CatalogItem): CatalogItem[] {
+//   return Promise.resolve([item, item, item]);
+// }
+
+// No Type Erasure Issues
+function getSimilarItems2<T extends CatalogItem>(item: T): Promise<T[]> {
   return Promise.resolve([item, item, item]);
 }
+
+const temp2 = getSimilarItems2(someArtist);
+const temp3 = getSimilarItems2(someObject);
