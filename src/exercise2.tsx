@@ -62,3 +62,18 @@ export interface Song extends CatalogItem {
   name: string;
   duration: number;
 }
+
+let someArtist: Artist = {
+  id: "",
+  url: "",
+  metadata: {},
+  name: "",
+};
+let someObject = {
+  value: 12,
+};
+
+// Type Erasure
+function getSimilarItems(item: CatalogItem): CatalogItem[] {
+  return Promise.resolve([item, item, item]);
+}
