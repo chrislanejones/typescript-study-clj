@@ -1,15 +1,23 @@
-type Shape2 = {
+
+type Cat = {
   name: string;
+  whiskers: number;
 };
 
-type Circle2 = Shape2 & {
-  radius: number;
+type Dog {
+  name: string;
+  obedient: boolean;
 };
 
-class Shape {
-  name: string = "";
+let catOrDog: Cat | Dog;
+let catAndDog: Cat & Dog;
+
+functio dealWithCatOrDog(animal Cat | Dog) {
+  if ("whiskers" in animal) {
+    
+  } else {
+
+  }
 }
 
-class Circle extends Shape {
-  radius: number = 0;
-}
+export default null;
