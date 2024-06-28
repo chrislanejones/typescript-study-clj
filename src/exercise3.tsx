@@ -1,7 +1,8 @@
-
+// Cat and Dog : Cat or Dog
 type Cat = {
   name: string;
   whiskers: number;
+  catBread: string;
 };
 
 type Dog {
@@ -12,11 +13,12 @@ type Dog {
 let catOrDog: Cat | Dog;
 let catAndDog: Cat & Dog;
 
-functio dealWithCatOrDog(animal Cat | Dog) {
+// If In property is actually Javascript
+function dealWithCatOrDog(animal: Cat | Dog) {
   if ("whiskers" in animal) {
-    
+    animal.catBread;
   } else {
-
+    animal.obedient;
   }
 }
 
