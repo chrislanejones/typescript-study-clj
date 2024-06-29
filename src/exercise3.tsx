@@ -11,7 +11,8 @@ let myCat = {
   Name: "Muffins",
   whiskers: 12,
   catBreed: "don't care",
-  TYPE: "Cat"
+  TYPE: "Cat" as const
+  // How to hard code cat so it will never change in TypeScript
 }
 
 let someCat: Cat;
@@ -47,5 +48,9 @@ function dealWithCatOrDog1(animal: Cat | Dog ) {
 // If In property is actually Javascript - Good Version
 function dealWithCatOrDog2(animal: Cat | Dog ) {
   if (animal.TYPE === "Cat")
+
+
+let things: string | number = Math.random() < 0.5 ?                     
+
 
 export default null;
