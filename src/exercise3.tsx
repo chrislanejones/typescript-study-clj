@@ -50,7 +50,18 @@ function dealWithCatOrDog2(animal: Cat | Dog ) {
   if (animal.TYPE === "Cat")
 
 
-let things: string | number = Math.random() < 0.5 ?                     
+let things: string | number = Math.random() < 0.5 ? 12;                  
+
+// TypeScript in JavaScript is limited you can only get. 
+// String, Number, Boolean, Object, undefined, Null, and Symbol
+// Typeof will let you know if it is a number or a string 
+if (typeof thing === "string") {
+  thing
+} else if (typeof thing === "boolean"){
+  thing
+} else {
+
+}
 
 
 export default null;
