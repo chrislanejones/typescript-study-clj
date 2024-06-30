@@ -60,8 +60,23 @@ if (typeof thing === "string") {
 } else if (typeof thing === "boolean"){
   thing
 } else {
-
+  thing
 }
 
+Second Way
+ class A {
+  at string = "a"
+ }
+ class B {
+  at string = "B"
+ }
+
+ let at A | B = Math.random() < 0.5 ? new A() : new B()
+
+ if (x instanceof A) {
+
+ } else {
+    x.
+ }
 
 export default null;
