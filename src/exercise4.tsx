@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, propswithchildren } from "react";
 
 type Props = {
   str: string;
@@ -6,7 +6,7 @@ type Props = {
   handler: () => void;
 };
 
-export const Component1: FC<Props> = (props) => {
+export const Component1: FC<propswithchildren<Props>> = (props) => {
   return (
     <div>
       <div>{props.str}</div>
