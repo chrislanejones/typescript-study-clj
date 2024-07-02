@@ -28,4 +28,9 @@ class Circle extends Shape {
 // new Circle()
 
 let circle Circle = new Circle();
-let shape Circle = new Shape();
+let shape Shape = new Shape();
+
+let shape2: Shape;
+shape2 = circle
+
+circle = shape;
