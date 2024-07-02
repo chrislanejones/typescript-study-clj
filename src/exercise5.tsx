@@ -34,3 +34,6 @@ let shape2: Shape;
 shape2 = circle
 
 circle = shape;
+
+type DrawShapeFn (_: Shape) => void;
+type DrawCircleFn (_: Shape) => void;
