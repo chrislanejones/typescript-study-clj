@@ -38,6 +38,27 @@ type ThingsThatMatter = {
    [S in keyof CorrectLifeChoices]: CorrectLifeChoices[S]
 }
 
-type XXX = ThingsThatMatter[ "city" | "conference" | "languages"]
+type XXX = ThingsThatMatter[ "city" | "conference" | "languages"];
+
+const paths = {
+  users: "/users",
+  userContacts: "/users/contacts",
+  user: "/users/:id",
+  settings: "/admin/settings",
+  billing: "/admin/billing",
+  account: "/admin/account",
+} as const;
+
+type Paths = typeof paths;
+
+type AllPaths = {
+  [P in keyof Paths]: Paths[P]
+}[keyof Paths]
+
+
+type PluckPathsFor_A<T, Path extends string> = T extends `/${Path}/${string}`
+  ? T
+  : never;
+
 
 export default null;
