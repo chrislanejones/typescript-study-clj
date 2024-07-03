@@ -22,4 +22,22 @@ const fn = ({} = 12);
 
 type X = GetReturnType<typeof for>;
 
+
+// Build you own Types that are indexed arbitrarily
+type CorrectLifeChoices = {
+  conference: "RenderATL";
+  city: "Atlanta";
+  languages: "TypeScript";
+};
+
+type ABC = {
+ [S: in keyof CorrectLifeChoices as`getS(Capital<S>)`]: CorrectLifeChoices[S];
+}
+
+type ThingsThatMatter = { 
+   [S in keyof CorrectLifeChoices]: CorrectLifeChoices[S]
+}
+
+type XXX = ThingsThatMatter[ "city" | "conference" | "languages"]
+
 export default null;
