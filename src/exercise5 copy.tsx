@@ -40,11 +40,3 @@ type DrawCircleFn (item: Circle) => void;
 
 let drawShape: DrawShapeFn (_: Shape) => {};
 let drawCircle: DrawCircleFn (_: Circle) => {};
-
-type Useless = Array<number> extends string ? { val: true } : string;
-
-type IsArray<T> = T extends Array<unknown> ? true: false;
-
-type A = IsArray<number[]> 
-
-type ArrayOfwhat<T> That
